@@ -86,8 +86,8 @@ WITH
         --get duplicated comtrs and get the sum value 
     com_area AS (
         SELECT co_mtrs AS comtrs, SUM(area) AS area
-        FROM ca_pestt.purlayer
-        GROUP BY co_mtrs),
+        FROM ca_pest.purlayer
+        GROUP BY co_mtrs)
     
 --    SELECT * FROM com_area;
 
