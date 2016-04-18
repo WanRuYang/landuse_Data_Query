@@ -112,7 +112,7 @@ UPDATE pur.udc SET grower_id = REPLACE(grower_id, substring(grower_id,3,2), subs
 
 UPDATE pur.udc SET unit_planted = 'A' WHERE unit_planted = 'a';
 UPDATE pur.udc SET unit_treated = 'A' WHERE unit_treated = 'a';
-
+UPDATE pur.udc SET grower_id = REPLACE(grower_id, substring(grower_id,3,2), substring(year::text,3,2)) WHERE year=2010 AND grower_id='0101017003R';
 -- 
 -- combine 'site.txt' extracted from zip file of each year
 
