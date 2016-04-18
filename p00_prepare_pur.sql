@@ -110,7 +110,8 @@ UPDATE pur.udc SET (acre_treated, unit_treated) = (acre_treated / 43560, 'A') WH
 UPDATE pur.udc SET (acre_planted, unit_planted) = (acre_planted / 43560, 'A') WHERE unit_planted = 'S';
 UPDATE pur.udc SET grower_id = REPLACE(grower_id, substring(grower_id,3,2), substring(year::text,3,2)) WHERE substring(grower_id,3,2)!=substring(year::text,3,2);
 
-
+UPDATE pur.udc SET unit_planted = 'A' WHERE unit_planted = 'a';
+UPDATE pur.udc SET unit_treated = 'A' WHERE unit_treated = 'a';
 
 -- 
 -- combine 'site.txt' extracted from zip file of each year
